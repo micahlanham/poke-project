@@ -1,7 +1,7 @@
 const seedCategories = require('./category-seeds');
-const seedpocketmonsters = require('./pokemon-seeds');
-const seedpokemontypes = require('./type-seeds');
-const seedusers = require('./user-seeds');
+const seedPocketMonsters = require('./pokemon-seeds');
+const seedPokemonTypes = require('./type-seeds');
+const seedUsers = require('./user-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -11,13 +11,13 @@ const seedAll = async () => {
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedpocketmonsters();
+  await seedPocketMonsters();
   console.log('\n----- POKEMON SEEDED -----\n');
 
-  await seedpokemontypes();
+  await seedPokemonTypes();
   console.log('\n----- TYPES SEEDED -----\n');
 
-  await seedusers();
+  await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
 
   process.exit(0);

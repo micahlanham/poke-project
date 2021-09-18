@@ -28,6 +28,6 @@ const pokemonData = [
   },
 ];
 
-const seedpocketmonsters = () => Pokemon.bulkCreate(pokemonData);
+const seedPocketMonsters = () => Pokemon.bulkCreate(pokemonData);
 
-module.exports = seedpocketmonsters;
+module.exports = seedPocketMonsters;

@@ -1,4 +1,4 @@
-const { PokemonType } = require('../models');
+const { Type } = require('../models');
 
 const pokemonTypeData = [
   {
@@ -8,6 +8,6 @@ const pokemonTypeData = [
   //Fill more columns
 ];
 
-const seedpokemontypes = () => PokemonType.bulkCreate(pokemonTypeData);
+const seedPokemonTypes = () => Type.bulkCreate(pokemonTypeData);
 
-module.exports = seedpokemontypes;
+module.exports = seedPokemonTypes;
