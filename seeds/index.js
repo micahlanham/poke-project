@@ -1,7 +1,7 @@
 const seedCategories = require('./category-seeds');
-const seedProducts = require('./product-seeds');
-const seedTags = require('./tag-seeds');
-const seedProductTags = require('./product-tag-seeds');
+const seedpocketmonsters = require('./pokemon-seeds');
+const seedpokemontypes = require('./type-seeds');
+const seedusers = require('./user-seeds');
 
 const sequelize = require('../config/connection');
 
