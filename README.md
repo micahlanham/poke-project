@@ -1,6 +1,6 @@
 # Poke-project
 
 ## About
-After logging into the app, the user will pick a pokemon from the list to use as a fighter. They will then proceed to fight opponent pokemon.
+After the user creates account/logs in, they'll search up desired pokemon. After searching up pokemon by name, information of the pokemon will populate just like the pokedex from the pokemon tv show.
 
 # User Story
