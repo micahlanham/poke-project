@@ -6,7 +6,31 @@ class Pokemon extends Model {}
 
 Pokemon.init(
   {
-    //Code here
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
+    name: {
+      type: DataTypes.STRING
+    },
+    height: {
+      type: DataTypes.INTEGER
+    },
+    weight: {
+      type: DataTypes.INTEGER
+    },
+    front_default: {
+      type: DataTypes.STRING
+    },
+    entry_number: {
+      type: DataTypes.INTEGER
+    }
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'pokemon'
   }
 );
 
