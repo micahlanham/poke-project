@@ -1,6 +1,18 @@
 // Make search function
 
 
+const express = require('express')
+const app = express()
+
+// import sequelize connection
+const sequelize = require('./config/connection');
+
+const PORT = process.env.PORT || 3001;
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //pokemon api 
 var PokeApi = require('pokeapi');
 var api = PokeApi.v1();
@@ -14,24 +26,29 @@ api.get('pokemon', 1).then(function(bulbasaur) {
     console.log('ERROR', err);
 });
 
-//fetches the original 151 pokemon 
+function renderEverything(){
+  let allPokemonContainer = document.querySelector('#poke-container')
+  allPokemonContainer.innerText = "";
+  fetchKantoPokemon();
+}
 
+//fetches the original 151 pokemon 
 function fetchKantoPokemon(){
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-     .then(response => response.json())
-     .then(function(allpokemon){
-     allpokemon.results.forEach(function(pokemon){
-       fetchPokemonData(pokemon); 
-     })
-    })
-   }
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+  .then(response => response.json())
+  .then(function(allpokemon){
+      allpokemon.results.forEach(function(pokemon){
+          fetchPokemonData(pokemon);
+      })
+  })
+}
 
    function fetchPokemonData(pokemon){
     let url = pokemon.url // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
       fetch(url)
       .then(response => response.json())
       .then(function(pokeData){
-      console.log(pokeData)
+        renderPokemon(pokeData)
       })
     }
 
@@ -62,8 +79,18 @@ function fetchKantoPokemon(){
 
        //This will generate picture for pokemon want to look into different picture options  
           
-          function createPokeImage(pokeID, containerDiv){
-            let pokeImage = document.createElement('img')
-            pokeImage.srcset =    `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`
-            containerDiv.append(pokeImage);
-          }
+       function createPokeImage(pokeID, containerDiv){
+        let pokeImgContainer = document.createElement('div')
+        pokeImgContainer.classList.add('image')
+    
+        let pokeImage = document.createElement('img')
+        pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`
+    
+        pokeImgContainer.append(pokeImage);
+        containerDiv.append(pokeImgContainer);
+    }
+
+    // sync sequelize models to the database, then turn on the server
+    sequelize.sync({ force: false}).then(() => {
+      app.listen(PORT, () => console.log('Now listening'));
+    });
