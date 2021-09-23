@@ -37,7 +37,13 @@
     </header>
     <main>
       {{{ body }}}
-      
+      {{!--card image and text.. this is where the pokemon pictures, name, and description will be located--}}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">{{#items}}
+        <div class="card-body">{{title}}
+          <p class="card-text">{{{description}}}</p>
+        </div>
+      </div>
     </main>
     <footer>
 
