@@ -60,6 +60,8 @@ function fetchKantoPokemon(){
             })
           }
 
+       //This will generate picture for pokemon want to look into different picture options  
+          
           function createPokeImage(pokeID, containerDiv){
             let pokeImage = document.createElement('img')
             pokeImage.srcset =    `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`
