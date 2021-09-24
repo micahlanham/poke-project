@@ -6,12 +6,13 @@
 
 /* CSS Variables*/
 :root {
+    /* main colors */
     --red: #FF0000;
     --Boston-university-red: #CC0000;
     --cerulean-blue: #3B4CCA;
     --golden-yellow: #FFDE00;
     --gold-foil: #B3A125;
-
+    /* pokemon type colors */
     --normal: #A8A77A;
     --fire: #EE8130; 
     --water: #6390F0; 
@@ -37,12 +38,23 @@ html {
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: "poppins";
-    color: white;
+    font-family: 'Poppins', sans-serif;    color: white;
 }
 
 h2 {
     font-family: pokemon solid;
+}
+
+.search-btn {
+    outline-color: white;
+}
+
+.search-btn:hover {
+ color: white;
+}
+
+.bi-person-circle {
+    color: white;
 }
 
 #container {
