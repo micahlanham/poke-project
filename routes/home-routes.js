@@ -1,31 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { apiSearch, User, Pokemon, } = require('../models');
+const { User, Pokemon, } = require('../models');
 
 // get all apiSearchs for homepage
-router.get('/', (req, res) => {
-  console.log('======================');
-  apiSearch.findAll({
-    attributes: [
-      'id',
-      'apiSearch_url',
-      [sequelize.literal('(SELECT COUNT(*) FROM pokemon WHERE apiSearch.id = vote.apiSearch_id)'), 'vote_count']
-    ],
-    include: [
-      {
-        model: Pokemon,
-        attributes: ['id', 'Pokemon_text', 'apiSearch_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
+
     .then(dbapiSearchData => {
       const apiSearchs = dbapiSearchData.map(apiSearch => apiSearch.get({ plain: true }));
 
