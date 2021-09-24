@@ -2,105 +2,164 @@ const { Pokemon } = require('../models');
 
 const pokedata = [
   {
-    title: 'Donec posuere metus vitae ipsum.',
-    post_url: 'https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png',
-    user_id: 10
+    id: 1,
+    name: 'Bulbasaur',
+    height: 7,
+    weight: 69,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+    entry_number: 1
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
-    post_url: 'https://nasa.gov/donec.json',
-    user_id: 8
+    id: 2,
+    name: 'Ivysaur',
+    height: 10,
+    weight: 130,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png',
+    entry_number: 2
   },
   {
-    title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
-    post_url: 'https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx',
-    user_id: 1
+    id: 3,
+    name: 'Venusaur',
+    height: 20,
+    weight: 1000,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png',
+    entry_number: 3
   },
   {
-    title: 'Nunc purus.',
-    post_url: 'http://desdev.cn/enim/blandit/mi.jpg',
-    user_id: 4
+    id: 4,
+    name: 'Charmander',
+    height: 6,
+    weight: 85,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
+    entry_number: 4
   },
   {
-    title: 'Pellentesque eget nunc.',
-    post_url: 'http://google.ca/nam/nulla/integer.aspx',
-    user_id: 7
+    id: 5,
+    name: 'Charmeleon',
+    height: 11,
+    weight: 190,
+    front_default: '"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png',
+    entry_number: 5
   },
   {
-    title: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-    post_url: 'https://stanford.edu/consequat.png',
-    user_id: 4
+    id: 6,
+    name: 'Charizard',
+    height: 17,
+    weight: 905,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png',
+    entry_number: 6
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_url: 'http://edublogs.org/non/ligula/pellentesque.js',
-    user_id: 1
+    id: 7,
+    name: 'Squirtle',
+    height: 5,
+    weight: 90,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
+    entry_number: 7
   },
   {
-    title: 'Morbi non quam nec dui luctus rutrum.',
-    post_url: 'http://ucla.edu/consequat/nulla.html',
-    user_id: 1
+    id: 8,
+    name: 'Wartortle',
+    height: 10,
+    weight: 225,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png',
+    entry_number: 8
   },
   {
-    title: 'Duis ac nibh.',
-    post_url: 'http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx',
-    user_id: 9
+    id: 9,
+    name: 'Blastoise',
+    height: 16,
+    weight: 855,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png',
+    entry_number: 9
   },
   {
-    title: 'Curabitur at ipsum ac tellus semper interdum.',
-    post_url: 'https://reverbnation.com/ligula/sit.jpg',
-    user_id: 5
+    id: 10,
+    name: 'Caterpie',
+    height: 3,
+    weight: 29,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png',
+    entry_number: 10
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_url: 'http://china.com.cn/lectus/vestibulum.json',
-    user_id: 3
+    id: 11,
+    name: 'Metapod',
+    height: 7,
+    weight: 99,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png',
+    entry_number: 11
   },
   {
-    title: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.',
-    post_url: 'http://networksolutions.com/nam/ultrices/libero/non/mattis/pulvinar.json',
-    user_id: 10
+    id: 12,
+    name: 'Butterfree',
+    height: 11,
+    weight: 320,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png',
+    entry_number: 12
   },
   {
-    title: 'Donec dapibus.',
-    post_url: 'https://instagram.com/ac/neque/duis/bibendum/morbi/non.xml',
-    user_id: 8
+    id: 13,
+    name: 'Weedle',
+    height: 3,
+    weight: 32,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png',
+    entry_number: 13
   },
   {
-    title: 'Nulla tellus.',
-    post_url: 'https://lycos.com/natoque/penatibus/et.html',
-    user_id: 3
+    id: 14,
+    name: 'Kakuna',
+    height: 6,
+    weight: 100,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png',
+    entry_number: 14
   },
   {
-    title: 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.',
-    post_url: 'https://gmpg.org/lorem.jpg',
-    user_id: 3
+    id: 15,
+    name: 'Beedrill',
+    height: 10,
+    weight: 295,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png',
+    entry_number: 15
   },
   {
-    title:
-      'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.',
-    post_url: 'https://paginegialle.it/mattis/egestas.jsp',
-    user_id: 7
+    id: 16,
+    name: 'Pidgey',
+    height: 3,
+    weight: 18,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png',
+    entry_number: 16
   },
   {
-    title: 'In hac habitasse platea dictumst.',
-    post_url: 'http://wikia.com/turpis/eget.jpg',
-    user_id: 6
+    id: 17,
+    name: 'Pidgeotto',
+    height: 11,
+    weight: 300,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png',
+    entry_number: 17
   },
   {
-    title: 'Etiam justo.',
-    post_url: 'https://shareasale.com/quis.json',
-    user_id: 4
+    id: 18,
+    name: 'Pidgeot',
+    height: 15,
+    weight: 395,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png',
+    entry_number: 18
   },
   {
-    title: 'Nulla ut erat id mauris vulputate elementum.',
-    post_url: 'http://java.com/diam/neque/vestibulum/eget/vulputate/ut/ultrices.png',
-    user_id: 6
+    id: 19,
+    name: 'Rattata',
+    height: 3,
+    weight: 35,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png',
+    entry_number: 19
   },
   {
-    title: 'Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-    post_url: 'https://java.com/at/nibh/in.png',
-    user_id: 7
+    id: 20,
+    name: 'Raticate',
+    height: 7,
+    weight: 185,
+    front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png',
+    entry_number: 20
   }
 ];
 

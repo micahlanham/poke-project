@@ -25,7 +25,7 @@ UserPokemon.init(
           key: 'id'
         }
       }
-  },
+    },
   {
     sequelize,
     timestamps: true,

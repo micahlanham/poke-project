@@ -3,7 +3,9 @@ const sequelize = require('../config/connection');
 const { User, Pokemon, } = require('../models');
 
 // get all apiSearchs for homepage
-
+router.get('/', (req, res) => {
+  console.log('======================');
+ 
     .then(dbapiSearchData => {
       const apiSearchs = dbapiSearchData.map(apiSearch => apiSearch.get({ plain: true }));
 

@@ -1,5 +1,4 @@
-const sequelize = require('../config/connection');
-const { User, Pokemon } = require('../models');
+const { User } = require('../models');
 
 const userdata = [
   {
