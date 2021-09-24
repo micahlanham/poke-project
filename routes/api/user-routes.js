@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Pokemon } = require('../../models');
 
+//get users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//get username
 router.get('/:username', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -41,6 +43,7 @@ router.get('/:username', (req, res) => {
     });
 });
 
+//create account
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
@@ -62,6 +65,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//find one user
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -90,6 +94,8 @@ router.post('/login', (req, res) => {
   });
 });
 
+
+//logout user
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -121,6 +127,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//delete user
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
