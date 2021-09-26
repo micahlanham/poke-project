@@ -26,14 +26,6 @@
       <h1>
         <a href="/">Pokedex</a>
       </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
       {{!--header/nav bar --}}
       <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -60,9 +52,7 @@
     </footer>
   </div>
 
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
+  
 </body>
 
 </html>
